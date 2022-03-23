@@ -3,6 +3,7 @@
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:laundry_pintar/page/profile.dart';
+import 'package:laundry_pintar/routes/route.dart';
 import 'package:laundry_pintar/widgets/feature_titled.dart';
 import 'package:laundry_pintar/widgets/name_container.dart';
 import 'package:laundry_pintar/widgets/service_card.dart';
@@ -34,29 +35,34 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+
+
+
+
       bottomNavigationBar: FancyBottomNavigation(
         tabs: [
           TabData(
               iconData: Icons.history_toggle_off_rounded,
               title: "History",
               onclick: () {
-                final FancyBottomNavigationState fState = bottomNavigationKey
-                    .currentState as FancyBottomNavigationState;
-                fState.setPage(2);
+              Navigator.pushNamed(context, historypage);
+                // final FancyBottomNavigationState fState = bottomNavigationKey
+                //     .currentState as FancyBottomNavigationState;
+                // fState.setPage(2);
               }),
           TabData(
             iconData: Icons.home,
             title: "Home",
-            onclick: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => ProfilePage(),
-              ),
-            ),
+            onclick: () {
+              // Navigator.pushNamed(context, homepage);
+            },
           ),
           TabData(
-            iconData: Icons.person,
-            title: "Profile",
-          )
+              iconData: Icons.person,
+              title: "Profile",
+              onclick: () {
+                Navigator.pushNamed(context, profilepage);
+              })
         ],
         initialSelection: 1,
         key: bottomNavigationKey,
@@ -66,79 +72,71 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[Text("Hello"), Text("World")],
-        ),
-      ),
     );
   }
 
-  _getPage(int page) {
-    switch (page) {
-      case 0:
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text("This is the home page"),
-            RaisedButton(
-              child: Text(
-                "Start new page",
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Theme.of(context).primaryColor,
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
-              },
-            ),
-            RaisedButton(
-              child: Text(
-                "Change to page 3",
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Theme.of(context).accentColor,
-              onPressed: () {
-                final FancyBottomNavigationState fState = bottomNavigationKey
-                    .currentState as FancyBottomNavigationState;
-                fState.setPage(2);
-              },
-            )
-          ],
-        );
-      case 1:
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text("This is the search page"),
-            RaisedButton(
-              child: Text(
-                "Start new page",
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Theme.of(context).primaryColor,
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
-              },
-            )
-          ],
-        );
-      default:
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text("This is the basket page"),
-            RaisedButton(
-              child: Text(
-                "Start new page",
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Theme.of(context).primaryColor,
-              onPressed: () {},
-            )
-          ],
-        );
-    }
-  }
+  // _getPage(int page) {
+  //   switch (page) {
+  //     case 0:
+  //       return Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: <Widget>[
+  //           // Text("This is the home page"),
+  //           RaisedButton(
+  //             child: Text(
+  //               "Start new page",
+  //               style: TextStyle(color: Colors.black),
+  //             ),
+  //             color: Theme.of(context).primaryColor,
+  //             onPressed: () {
+  //               // Navigator.of(context).pushNamed(homepage);
+  //             },
+  //           ),
+  //           RaisedButton(
+  //             child: Text(
+  //               "Change to page 3",
+  //               style: TextStyle(color: Colors.black),
+  //             ),
+  //             color: Theme.of(context).accentColor,
+  //             onPressed: () {
+  //               // final FancyBottomNavigationState fState = bottomNavigationKey
+  //               //     .currentState as FancyBottomNavigationState;
+  //               // fState.setPage(2);
+  //               // Navigator.of(context).pushNamed(profilepage);
+  //             },
+  //           )
+  //         ],
+  //       );
+  //     case 1:
+  //       return Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: <Widget>[
+  //           Text("This is the search page"),
+  //           RaisedButton(
+  //             child: Text(
+  //               "Start new page",
+  //               style: TextStyle(color: Colors.black),
+  //             ),
+  //             color: Theme.of(context).primaryColor,
+  //             onPressed: () {},
+  //           )
+  //         ],
+  //       );
+  //     default:
+  //       return Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: <Widget>[
+  //           // Text("This is the basket page"),
+  //           RaisedButton(
+  //             child: Text(
+  //               "Start new page",
+  //               style: TextStyle(color: Colors.white),
+  //             ),
+  //             color: Theme.of(context).primaryColor,
+  //             onPressed: () {},
+  //           )
+  //         ],
+  //       );
+  //   }
+  // }
 }

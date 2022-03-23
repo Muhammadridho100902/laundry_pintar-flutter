@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "689465236817",
+    "project_id": "laundry-pintar-3804b",
+    "storage_bucket": "laundry-pintar-3804b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689465236817:android:ac4a1b9c87d1c2984bc770",
+        "android_client_info": {
+          "package_name": "com.example.laundry_pintar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689465236817-le79q1cqir5ka4l6feae2070u5ecf95a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbyihvRau02OCOGsykW-rQXEk48WdE6tI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689465236817-le79q1cqir5ka4l6feae2070u5ecf95a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

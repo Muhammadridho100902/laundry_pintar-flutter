@@ -1,9 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:laundry_pintar/page/home.dart';
+import 'package:laundry_pintar/routes/route.dart' as route;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -15,6 +19,8 @@ void main() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
+      onGenerateRoute: route.controller,
+      initialRoute: route.dashboardPage,
     );
   }
 }
