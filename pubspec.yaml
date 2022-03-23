@@ -38,6 +38,8 @@ dependencies:
   firebase_core: ^0.5.3
   firebase_auth: ^0.18.4+1
   modal_progress_hud: ^0.1.3
+  flutter_onboarding_slider:
+  animated_splash_screen: ^1.2.0
 
 dev_dependencies:
   flutter_test:
